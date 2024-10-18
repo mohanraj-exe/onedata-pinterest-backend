@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -11,12 +12,11 @@ dbConnect();
 // Middleware to parse JSON
 app.use(express.json());
 
-// CORS configuration (adjust as needed)
 const corsOptions = {
-    origin: 'http://localhost:5173', // Change to your front-end domain, or '*' for all domains
-    methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'], // Specify allowed methods
-    allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
-    credentials: true // If you need to allow cookies or authentication headers
+    origin: 'http://localhost:5173',
+    methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
 };
 
 // Enable CORS for all routes

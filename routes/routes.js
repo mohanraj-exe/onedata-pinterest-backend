@@ -22,7 +22,7 @@ router.get('/pin/:id', async (req, res) => {
 });
 
 router.patch('/pin_likes/:id', async (req, res) => {
-    console.log("req:", req.body);
+    // console.log("req:", req.body);
     const { id } = req.params;
     const { likeCount } = req.body;
     try {
